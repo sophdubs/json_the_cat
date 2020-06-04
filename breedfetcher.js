@@ -6,7 +6,7 @@ const fetchBreedDescription = function(breed, callback) {
       callback(error);
     } else {
       let bodyObj = JSON.parse(body)[0];
-      let response = bodyObj ? bodyObj.description : 'Sorry, there is no information for that breed.';
+      let response = bodyObj ? bodyObj.description.trim() : 'Sorry, there is no information for that breed.';
       callback(null, response);
     }
   });
